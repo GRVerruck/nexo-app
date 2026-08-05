@@ -1,0 +1,39 @@
+/**
+ * Configuração espelhada também em package.json > build.
+ * Preferência: use os scripts npm (npm run build).
+ */
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.nexo.app",
+  "productName": "NEXO",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "src/data/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "src/data/initialSeed.json",
+      "to": "data/initialSeed.json"
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "artifactName": "${productName}-Setup-${version}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "NEXO"
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "products": [
+    {
+      "codigo": "CP001",
+      "produto": "Copo Monster",
+      "categoria": "Porta-Latas",
+      "custo": 19.3,
+      "preco_loja": 37,
+      "preco_final": 49.9,
+      "lucro": 17.7
+    },
+    {
+      "codigo": "PI001",
+      "produto": "Porta Isqueiro MM",
+      "categoria": "Porta Isqueiros",
+      "custo": 4.4,
+      "preco_loja": 13,
+      "preco_final": 15.9,
+      "lucro": 8.6
+    },
+    {
+      "codigo": "PI002",
+      "produto": "Porta Isqueiro Ghost",
+      "categoria": "Porta Isqueiros",
+      "custo": 1.47,
+      "preco_loja": 6,
+      "preco_final": 10,
+      "lucro": 4.53
+    },
+    {
+      "codigo": "CH001",
+      "produto": "Chaveiro Chopp",
+      "categoria": "Chaveiros",
+      "custo": 0.72,
+      "preco_loja": 2,
+      "preco_final": 3.5,
+      "lucro": 1.28
+    },
+    {
+      "codigo": "CH002",
+      "produto": "Chaveiro Copa",
+      "categoria": "Chaveiros",
+      "custo": 0.78,
+      "preco_loja": 2,
+      "preco_final": 3.5,
+      "lucro": 1.22
+    },
+    {
+      "codigo": "CH003",
+      "produto": "Chaveiro Grêmio",
+      "categoria": "Chaveiros",
+      "custo": 1.69,
+      "preco_loja": 6.5,
+      "preco_final": 9.9,
+      "lucro": 4.81
+    },
+    {
+      "codigo": "CH004",
+      "produto": "Chaveiro Inter",
+      "categoria": "Chaveiros",
+      "custo": 1.04,
+      "preco_loja": 5.5,
+      "preco_final": 8.9,
+      "lucro": 4.46
+    },
+    {
+      "codigo": "CH005",
+      "produto": "Chaveiro Banguela",
+      "categoria": "Chaveiros",
+      "custo": 6.29,
+      "preco_loja": 10,
+      "preco_final": 12,
+      "lucro": 3.71
+    },
+    {
+      "codigo": "CH006",
+      "produto": "Chaveiro Gato Flexível",
+      "categoria": "Chaveiros",
+      "custo": 4.01,
+      "preco_loja": 15,
+      "preco_final": 19.9,
+      "lucro": 10.99
+    },
+    {
+      "codigo": "CH007",
+      "produto": "Chaveiro Pata Pet",
+      "categoria": "Chaveiros",
+      "custo": 0.91,
+      "preco_loja": 2,
+      "preco_final": 3.5,
+      "lucro": 1.09
+    },
+    {
+      "codigo": "CH008",
+      "produto": "Chaveiro Esqueleto Flexível",
+      "categoria": "Chaveiros",
+      "custo": 0.78,
+      "preco_loja": 6,
+      "preco_final": 10,
+      "lucro": 5.22
+    },
+    {
+      "codigo": "CH009",
+      "produto": "Chaveiro Gato Cauda Longa Flexível",
+      "categoria": "Chaveiros",
+      "custo": 4.37,
+      "preco_loja": 15,
+      "preco_final": 19.9,
+      "lucro": 10.63
+    },
+    {
+      "codigo": "CH010",
+      "produto": "Chaveiro Monster",
+      "categoria": "Chaveiros",
+      "custo": 1.44,
+      "preco_loja": 4.5,
+      "preco_final": 6,
+      "lucro": 3.06
+    },
+    {
+      "codigo": "CH011",
+      "produto": "Chaveiro Estrela Mario",
+      "categoria": "Chaveiros",
+      "custo": 3.46,
+      "preco_loja": 4.5,
+      "preco_final": 6.5,
+      "lucro": 1.04
+    },
+    {
+      "codigo": "BD001",
+      "produto": "Balde Homem-Aranha",
+      "categoria": "Balde",
+      "custo": 29,
+      "preco_loja": 60,
+      "preco_final": 64.9,
+      "lucro": 31
+    },
+    {
+      "codigo": "PG001",
+      "produto": "Porta Gloss",
+      "categoria": "Porta Gloss",
+      "custo": 4.84,
+      "preco_loja": 13,
+      "preco_final": 15,
+      "lucro": 8.16
+    },
+    {
+      "codigo": "CH012",
+      "produto": "Chaveiro Gato Bravo",
+      "categoria": "Chaveiros",
+      "custo": 2.94,
+      "preco_loja": 5,
+      "preco_final": 7,
+      "lucro": 2.06
+    },
+    {
+      "codigo": "CH013",
+      "produto": "Chaveiro Cabeça Cavalo",
+      "categoria": "Chaveiros",
+      "custo": 1.24,
+      "preco_loja": 2,
+      "preco_final": 3.5,
+      "lucro": 0.76
+    },
+    {
+      "codigo": "CH014",
+      "produto": "Chaveiro Coelho",
+      "categoria": "Chaveiros",
+      "custo": 1.3,
+      "preco_loja": 2,
+      "preco_final": 2.5,
+      "lucro": 0.7
+    },
+    {
+      "codigo": "CH015",
+      "produto": "Cruz Jesus",
+      "categoria": "Chaveiros",
+      "custo": 2.57,
+      "preco_loja": 5.5,
+      "preco_final": 6.5,
+      "lucro": 2.93
+    },
+    {
+      "codigo": "CH016",
+      "produto": "Chaveiro Gato Frajola",
+      "categoria": "Chaveiros",
+      "custo": 6.74,
+      "preco_loja": 19,
+      "preco_final": 21.9,
+      "lucro": 12.26
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-bar-25-julho",
+      "nome": "Bar 25 de Julho",
+      "endereco": "",
+      "contato": "",
+      "items": [
+        {
+          "codigo": "CP001",
+          "produto_nome": "Copo Monster",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 37,
+          "preco_sugerido": 49.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "PI002",
+          "produto_nome": "Porta Isqueiro Ghost",
+          "entregue": 9,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 9,
+          "preco_lojista": 6,
+          "preco_sugerido": 10,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "PI001",
+          "produto_nome": "Porta Isqueiro MM",
+          "entregue": 2,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 2,
+          "preco_lojista": 13,
+          "preco_sugerido": 15.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH003",
+          "produto_nome": "Chaveiro Grêmio",
+          "entregue": 6,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 6,
+          "preco_lojista": 6.5,
+          "preco_sugerido": 9.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH001",
+          "produto_nome": "Chaveiro Chopp",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 2,
+          "preco_sugerido": 3.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH002",
+          "produto_nome": "Chaveiro Copa",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 2,
+          "preco_sugerido": 3.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH004",
+          "produto_nome": "Chaveiro Inter",
+          "entregue": 6,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 6,
+          "preco_lojista": 5.5,
+          "preco_sugerido": 8.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH006",
+          "produto_nome": "Chaveiro Gato Flexível",
+          "entregue": 5,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 5,
+          "preco_lojista": 15,
+          "preco_sugerido": 19.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH007",
+          "produto_nome": "Chaveiro Pata Pet",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 2,
+          "preco_sugerido": 3.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH008",
+          "produto_nome": "Chaveiro Esqueleto Flexível",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 6,
+          "preco_sugerido": 10,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH009",
+          "produto_nome": "Chaveiro Gato Cauda Longa Flexível",
+          "entregue": 4,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 4,
+          "preco_lojista": 15,
+          "preco_sugerido": 19.9,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH010",
+          "produto_nome": "Chaveiro Monster",
+          "entregue": 7,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 7,
+          "preco_lojista": 4.5,
+          "preco_sugerido": 6,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH011",
+          "produto_nome": "Chaveiro Estrela Mario",
+          "entregue": 5,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 5,
+          "preco_lojista": 4.5,
+          "preco_sugerido": 6.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "PG001",
+          "produto_nome": "Porta Gloss",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 13,
+          "preco_sugerido": 15,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH012",
+          "produto_nome": "Chaveiro Gato Bravo",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 5,
+          "preco_sugerido": 7,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH013",
+          "produto_nome": "Chaveiro Cabeça Cavalo",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 2,
+          "preco_sugerido": 3.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH014",
+          "produto_nome": "Chaveiro Coelho",
+          "entregue": 0,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 0,
+          "preco_lojista": 2,
+          "preco_sugerido": 2.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH016",
+          "produto_nome": "Chaveiro Gato Frajola",
+          "entregue": 3,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 3,
+          "preco_lojista": 19,
+          "preco_sugerido": 21.9,
+          "data_entrega": null,
+          "observacoes": ""
+        }
+      ]
+    },
+    {
+      "id": "loc-mercado-schoulten",
+      "nome": "Mercado Schoulten",
+      "endereco": "",
+      "contato": "",
+      "items": [
+        {
+          "codigo": "CH015",
+          "produto_nome": "Cruz Jesus",
+          "entregue": 10,
+          "saidas": 0,
+          "reposicao": 0,
+          "em_estoque": 10,
+          "preco_lojista": 5.5,
+          "preco_sugerido": 6.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH011",
+          "produto_nome": "Chaveiro Estrela Mario",
+          "entregue": 10,
+          "saidas": 1,
+          "reposicao": 0,
+          "em_estoque": 9,
+          "preco_lojista": 4.5,
+          "preco_sugerido": 5.5,
+          "data_entrega": null,
+          "observacoes": ""
+        },
+        {
+          "codigo": "CH012",
+          "produto_nome": "Chaveiro Gato Bravo",
+          "entregue": 10,
+          "saidas": 1,
+          "reposicao": 0,
+          "em_estoque": 9,
+          "preco_lojista": 5.5,
+          "preco_sugerido": 6.5,
+          "data_entrega": null,
+          "observacoes": ""
+        }
+      ]
+    }
+  ]
+}
