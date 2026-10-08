@@ -190,6 +190,46 @@ export function deleteProduct(codigo) {
   return true
 }
 
+export function getCategories() {
+  const store = ensureLoaded()
+  const set = new Set([
+    ...(store.categories || []),
+    ...store.products.map((p) => p.categoria).filter(Boolean)
+  ])
+  return [...set].sort((a, b) => a.localeCompare(b, 'pt-BR'))
+}
+
+export function saveCategory({ nome, original } = {}) {
+  const store = ensureLoaded()
+  const name = String(nome || '').trim()
+  if (!name) throw new Error('Nome da categoria é obrigatório')
+
+  const clash = getCategories().find((c) => c.toLowerCase() === name.toLowerCase())
+  if (clash && clash !== original) throw new Error(`Já existe a categoria ${clash}`)
+
+  const list = (store.categories || []).filter((c) => c !== original)
+  list.push(name)
+  store.categories = list
+
+  if (original && original !== name) {
+    for (const p of store.products) {
+      if (p.categoria === original) p.categoria = name
+    }
+  }
+
+  persist()
+  return name
+}
+
+export function deleteCategory(nome) {
+  const store = ensureLoaded()
+  const emUso = store.products.filter((p) => p.categoria === nome).length
+  if (emUso) throw new Error(`Categoria em uso por ${emUso} produto(s)`)
+  store.categories = (store.categories || []).filter((c) => c !== nome)
+  persist()
+  return true
+}
+
 export function getLocations() {
   return ensureLoaded().locations
 }

@@ -19,6 +19,9 @@
             <v-list-item title="Exportar JSON" @click="doExport('json')" />
           </v-list>
         </v-menu>
+        <v-btn variant="outlined" prepend-icon="mdi-shape-plus" @click="categoryOpen = true">
+          Criar Categoria
+        </v-btn>
         <v-btn color="primary" prepend-icon="mdi-plus" @click="openCreate">Novo Produto</v-btn>
       </div>
     </div>
@@ -93,6 +96,8 @@
       @save="onSave"
     />
 
+    <CategoryDialog v-model="categoryOpen" />
+
     <v-dialog v-model="deleteOpen" max-width="420">
       <v-card>
         <v-card-title>Excluir produto?</v-card-title>
@@ -114,10 +119,12 @@
 import { inject, onMounted, ref } from 'vue'
 import { useProductStore } from '../stores/productStore'
 import ProductDialog from '../components/ProductDialog.vue'
+import CategoryDialog from '../components/CategoryDialog.vue'
 
 const store = useProductStore()
 const notify = inject('notify')
 
+const categoryOpen = ref(false)
 const dialogOpen = ref(false)
 const editing = ref(null)
 const deleteOpen = ref(false)

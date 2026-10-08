@@ -7,10 +7,7 @@ export const useProductStore = defineStore('products', () => {
   const search = ref('')
   const categoryFilter = ref(null)
 
-  const categories = computed(() => {
-    const set = new Set(products.value.map((p) => p.categoria).filter(Boolean))
-    return [...set].sort((a, b) => a.localeCompare(b, 'pt-BR'))
-  })
+  const categories = ref([])
 
   const filtered = computed(() => {
     const q = search.value.trim().toLowerCase()
@@ -29,7 +26,12 @@ export const useProductStore = defineStore('products', () => {
   async function fetchAll() {
     loading.value = true
     try {
-      products.value = await window.nexoApi.products.list()
+      const [list, cats] = await Promise.all([
+        window.nexoApi.products.list(),
+        window.nexoApi.categories.list()
+      ])
+      products.value = list
+      categories.value = cats
     } finally {
       loading.value = false
     }
@@ -43,6 +45,17 @@ export const useProductStore = defineStore('products', () => {
 
   async function remove(codigo) {
     await window.nexoApi.products.delete(codigo)
+    await fetchAll()
+  }
+
+  async function saveCategory(payload) {
+    await window.nexoApi.categories.save(payload)
+    await fetchAll()
+  }
+
+  async function removeCategory(nome) {
+    await window.nexoApi.categories.delete(nome)
+    if (categoryFilter.value === nome) categoryFilter.value = null
     await fetchAll()
   }
 
@@ -64,6 +77,8 @@ export const useProductStore = defineStore('products', () => {
     fetchAll,
     save,
     remove,
+    saveCategory,
+    removeCategory,
     exportCatalog,
     getByCodigo
   }

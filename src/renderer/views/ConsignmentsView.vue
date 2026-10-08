@@ -61,6 +61,16 @@
           <v-btn
             size="small"
             variant="text"
+            prepend-icon="mdi-file-pdf-box"
+            :loading="pdfLoading"
+            :disabled="!locStore.selected"
+            @click="exportPdf"
+          >
+            Gerar PDF
+          </v-btn>
+          <v-btn
+            size="small"
+            variant="text"
             prepend-icon="mdi-pencil"
             @click="openLocationEdit(locStore.selected)"
           >
@@ -349,6 +359,7 @@ const itemForm = reactive({
 })
 const deleteLocOpen = ref(false)
 const deletingLoc = ref(null)
+const pdfLoading = ref(false)
 
 const headers = [
   { title: 'Código', key: 'codigo', width: 100 },
@@ -469,6 +480,18 @@ async function confirmUnlink(item) {
     notify('Produto desvinculado', 'success')
   } catch (err) {
     notify(err.message || 'Erro ao desvincular', 'error')
+  }
+}
+
+async function exportPdf() {
+  pdfLoading.value = true
+  try {
+    const result = await window.nexoApi.locations.exportPdf(locStore.selected.id)
+    if (!result.canceled) notify('PDF gerado', 'success')
+  } catch (err) {
+    notify(err.message || 'Erro ao gerar PDF', 'error')
+  } finally {
+    pdfLoading.value = false
   }
 }
 

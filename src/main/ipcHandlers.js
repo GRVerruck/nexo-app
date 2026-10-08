@@ -1,5 +1,6 @@
-import { ipcMain, dialog } from 'electron'
+import { ipcMain, dialog, shell } from 'electron'
 import { writeFileSync } from 'node:fs'
+import { buildConsignmentHtml, renderPdf } from './pdf.js'
 import {
   getProducts,
   upsertProduct,
@@ -11,7 +12,10 @@ import {
   updateConsignmentItem,
   removeConsignmentItem,
   adjustStock,
-  exportCatalog
+  exportCatalog,
+  getCategories,
+  saveCategory,
+  deleteCategory
 } from './database.js'
 
 function wrap(fn) {
@@ -48,6 +52,10 @@ export function registerIpcHandlers() {
     })
   )
 
+  ipcMain.handle('categories:list', wrap(() => getCategories()))
+  ipcMain.handle('categories:save', wrap((payload) => saveCategory(payload)))
+  ipcMain.handle('categories:delete', wrap((nome) => deleteCategory(nome)))
+
   ipcMain.handle('locations:list', wrap(() => getLocations()))
   ipcMain.handle('locations:upsert', wrap((payload) => upsertLocation(payload)))
   ipcMain.handle('locations:delete', wrap((id) => deleteLocation(id)))
@@ -66,5 +74,24 @@ export function registerIpcHandlers() {
   ipcMain.handle(
     'locations:adjustStock',
     wrap(({ locationId, itemId, deltas }) => adjustStock(locationId, itemId, deltas))
+  )
+  ipcMain.handle(
+    'locations:exportPdf',
+    wrap(async (locationId) => {
+      const location = getLocations().find((l) => l.id === locationId)
+      if (!location) throw new Error('Localização não encontrada')
+      const safeName = location.nome.replace(/[<>:"/\\|?*\x00-\x1f]/g, '').trim() || 'localizacao'
+      const today = new Date().toISOString().slice(0, 10)
+      const { canceled, filePath } = await dialog.showSaveDialog({
+        title: 'Salvar PDF da consignação',
+        defaultPath: `consignacao-${safeName}-${today}.pdf`,
+        filters: [{ name: 'PDF', extensions: ['pdf'] }]
+      })
+      if (canceled || !filePath) return { canceled: true }
+      const pdf = await renderPdf(buildConsignmentHtml(location))
+      writeFileSync(filePath, pdf)
+      shell.openPath(filePath)
+      return { canceled: false, filePath }
+    })
   )
 }
